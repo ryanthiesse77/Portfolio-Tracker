@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'DM Serif Display';
+  --font-mono: 'IBM Plex Mono';
+  --font-body: 'DM Sans';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #060b18;
+  color: #e8edf5;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0a1628; }
+::-webkit-scrollbar-thumb { background: #1e3a7a; border-radius: 2px; }
+
+/* Chart tooltip */
+.recharts-tooltip-wrapper { outline: none; }
+.recharts-default-tooltip {
+  background: #0f2044 !important;
+  border: 1px solid #1e3a7a !important;
+  border-radius: 8px !important;
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-navy-900 border border-navy-700 rounded-xl p-4 md:p-5;
+  }
+  .btn-primary {
+    @apply bg-accent hover:bg-blue-500 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm;
+  }
+  .btn-ghost {
+    @apply border border-navy-700 hover:border-navy-600 text-gray-400 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm;
+  }
+  .input-field {
+    @apply bg-navy-900 border border-navy-700 rounded-lg px-3 py-2 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-accent w-full;
+  }
+  .table-cell {
+    @apply px-3 py-3 text-sm;
+  }
+  .gain { @apply text-gain; }
+  .loss { @apply text-loss; }
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+  }
+  .modal-box {
+    @apply bg-navy-900 border border-navy-700 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto;
+  }
+}
